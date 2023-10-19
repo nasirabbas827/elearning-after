@@ -1,0 +1,44 @@
+function addQuiz() {
+            var quizzesContainer = document.getElementById("quizzes-container");
+            var quizItem = document.createElement("div");
+            quizItem.classList.add("quiz-item");
+
+            var quizTitleLabel = document.createElement("label");
+            quizTitleLabel.textContent = "Quiz Title:";
+            var quizTitleInput = document.createElement("input");
+            quizTitleInput.type = "text";
+            quizTitleInput.name = "quiz_title[]";
+
+            var quizQuestionLabel = document.createElement("label");
+            quizQuestionLabel.textContent = "Quiz Question:";
+            var quizQuestionTextarea = document.createElement("textarea");
+            quizQuestionTextarea.name = "quiz_question[]";
+
+            var quizOptionsLabel = document.createElement("label");
+            quizOptionsLabel.textContent = "Quiz Options:";
+            var quizOptionsInput = document.createElement("input");
+            quizOptionsInput.type = "text";
+            quizOptionsInput.name = "quiz_options[0][]";
+            var br = document.createElement("br");
+
+            quizItem.appendChild(quizTitleLabel);
+            quizItem.appendChild(quizTitleInput);
+            quizItem.appendChild(quizQuestionLabel);
+            quizItem.appendChild(quizQuestionTextarea);
+            quizItem.appendChild(quizOptionsLabel);
+            quizItem.appendChild(quizOptionsInput);
+            quizItem.appendChild(br.cloneNode());
+            quizItem.appendChild(br.cloneNode());
+            quizItem.appendChild(br.cloneNode());
+
+            var quizCorrectAnswerLabel = document.createElement("label");
+            quizCorrectAnswerLabel.textContent = "Correct Answer (option number):";
+            var quizCorrectAnswerInput = document.createElement("input");
+            quizCorrectAnswerInput.type = "number";
+            quizCorrectAnswerInput.name = "quiz_correct_answers[]";
+
+            quizItem.appendChild(quizCorrectAnswerLabel);
+            quizItem.appendChild(quizCorrectAnswerInput);
+
+            quizzesContainer.appendChild(quizItem);
+        }
